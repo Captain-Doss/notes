@@ -220,3 +220,80 @@ standby 10 ip 10.22.1.3
 standby 10 preempt
 standby 10 Priority 150
 standby 10 Track 1 decrement 60
+
+check san naka connec
+sh ether chann summary
+=======================
+cdp: SHOW CDP NEI
+for the sec of sec : no cdp enable
+
+LLDP:sh
+how to on:lldp run 
+
+!@d1
+conf t
+
+
+========================================
+cdp: SHOW CDP NEI
+for the sec of sec : no cdp enable
+
+LLDP:sh
+how to on:lldp run 
+
+
+
+!@d1
+conf t
+int range e1/2-3
+channel-group 1 mode active
+channel-protocol lacp
+end
+
+
+!@ d2
+conf t
+int range e1/2-3
+channel-group 1 mode active
+channel-protocol lacp
+end
+
+
+
+!@a2
+conf t
+int range e0/1-2
+channel-group 5 mode passive
+channel-protocol lacp
+end
+
+!@D2
+conf t
+int range e0/0, e0/3
+channel-group 3 mode active
+channel-protocol lacp
+end
+int range e1/2, e1/3
+channel-group 2
+
+
+
+
+
+
+===========
+= para makita yung port na naka connect
+!=sh cdp neigh
+!=sh etherchannel summary
+=============
+lacp= open vendor
+pAgP = cisco vendor
+========
+po2
+!@D1
+
+conf t 
+int range e0/1-2
+channel-group 2 mode active
+channel-protocol lacp 
+end
